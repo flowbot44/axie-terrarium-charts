@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axie Terrarium Info Charts</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Axie Terrarium Update – Key Numbers</h1>
+        <section class="chart-section">
+            <h2>First‑Week Performance (V1)</h2>
+            <div class="chart-wrapper">
+                <canvas id="luniumChart"></canvas>
+            </div>
+            <p class="caption">Lunium sold (billions) vs revenue (USD)</p>
+        </section>
+
+        <section class="chart-section">
+            <h2>Evolved Parts Multiplier</h2>
+            <div class="chart-wrapper">
+                <canvas id="evolvedChart"></canvas>
+            </div>
+            <p class="caption">Multiplier applied to an Axie’s flame based on number of evolved parts equipped</p>
+        </section>
+
+        <section class="chart-section">
+            <h2>Land Item Rarity Boost</h2>
+            <div class="chart-wrapper">
+                <canvas id="landItemChart"></canvas>
+            </div>
+            <p class="caption">Percentage boost to Atia’s Flame (and AXP) per land item by rarity</p>
+        </section>
+
+        <section class="chart-section">
+            <h2>Fortune Slips Cost by Land Type</h2>
+            <div class="chart-wrapper">
+                <canvas id="fortuneChart"></canvas>
+            </div>
+            <p class="caption">Number of Fortune Slips needed to activate a 24‑hour, 10 % Atia’s Flame buff</p>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
