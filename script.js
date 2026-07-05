@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
             labels: ['Lunium Sold', 'Lunium Revenue'],
             datasets: [{
                 label: 'Amount',
-                data: [3.32, 95.753], // Lunium sold in B, revenue in k? Actually revenue $95,753 => 95.753k
+                data: [3.32, 95.753], // 3.32 B, $95,753 → 95.753 k
                 backgroundColor: [
                     'rgba(54, 162, 235, 0.6)',
                     'rgba(255, 99, 132, 0.6)'
@@ -22,10 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         options: {
             responsive: true,
-            plugins: {
-                legend: { display: false },
-                title: { display: false }
-            },
+            plugins: { legend: { display: false } },
             scales: {
                 y: {
                     beginAtZero: true,
@@ -51,7 +48,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 data: [1.0, 1.1, 1.2, 1.3, 1.45, 1.68],
                 fill: false,
                 borderColor: 'rgba(75, 192, 192, 1)',
-                tension: 0.1
+                tension: 0.1,
+                pointRadius: 6,
+                pointHoverRadius: 8
             }]
         },
         options: {
@@ -64,9 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 }
             },
-            scales: {
-                y: { beginAtZero: false }
-            }
+            scales: { y: { beginAtZero: false } }
         }
     });
 
@@ -104,9 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 }
             },
-            scales: {
-                y: { beginAtZero: true }
-            }
+            scales: { y: { beginAtZero: true } }
         }
     });
 
@@ -136,6 +131,60 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             scales: {
                 y: { beginAtZero: true }
+            }
+        }
+    });
+
+    // Land utility chart
+    const landUtilCtx = document.getElementById('landUtilChart').getContext('2d');
+    const totalPlots = 16886;
+    const activatedPct = 52.78;
+    const activatedPlots = Math.round(totalPlots * activatedPct / 100);
+    const lockedPlots = totalPlots - activatedPlots;
+    new Chart(landUtilCtx, {
+        type: 'bar',
+        data: {
+            labels: ['Total Plots', 'Activated & Locked', 'Locked (Inactive)', 'Max Items per Plot'],
+            datasets: [{
+                label: 'Count',
+                data: [totalPlots, activatedPlots, lockedPlots, 8],
+                backgroundColor: [
+                    'rgba(54, 162, 235, 0.6)',
+                    'rgba(75, 192, 192, 0.6)',
+                    'rgba(255, 99, 132, 0.6)',
+                    'rgba(153, 102, 255, 0.6)'
+                ],
+                borderColor: [
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(153, 102, 255, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: { display: false },
+                tooltip: {
+                    callbacks: {
+                        label: ctx => {
+                            const v = ctx.parsed.y;
+                            if (ctx.dataIndex === 0) return `${v.toLocaleString()} plots`;
+                            if (ctx.dataIndex === 1) return `${v.toLocaleString()} plots (${activatedPct}%)`;
+                            if (ctx.dataIndex === 2) return `${v.toLocaleString()} plots (${(100 - activatedPct).toFixed(2)}%)`;
+                            if (ctx.dataIndex === 3) return `${v} items per plot`;
+                            return v;
+                        }
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: { callback: v => v >= 1000 ? (v/1000)+'k' : v }
+                }
             }
         }
     });
