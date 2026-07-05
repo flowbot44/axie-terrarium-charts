@@ -3,87 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Axie Terrarium Info Charts</title>
+    <title>Axie Terrarium – Info Matrix</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <div class="container">
-        <h1>Axie Terrarium Update – Key Numbers</h1>
-        <p class="site-intro">All data sourced from the official <a href="https://blog.axieinfinity.com/p/terrariums-update-sneak-peek" target="_blank">Terrariums V1.1 sneak peek</a>.</p>
+<div class="container">
+    <h1>Axie Terrarium V1.1 — Info Matrix</h1>
+    <p class="site-intro">Data from the <a href="https://blog.axieinfinity.com/p/terrariums-update-sneak-peek" target="_blank">Terrariums update sneak peek</a>.</p>
 
-        <section class="chart-section">
-            <h2>First‑Week Performance (V1)</h2>
-            <div class="chart-wrapper"><canvas id="luniumChart"></canvas></div>
-            <p class="caption">Lunium sold (billions) vs revenue (USD)</p>
-        </section>
+    <!-- ===== EVOLVED PARTS ===== -->
+    <section class="matrix-section">
+        <h2>Evolved Parts Multiplier</h2>
+        <div class="table-wrap">
+            <table class="matrix-table">
+                <thead>
+                    <tr><th>Evolved Parts</th><th>Multiplier</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td>×1.0</td></tr>
+                    <tr><td>2</td><td>×1.1</td></tr>
+                    <tr><td>3</td><td>×1.2</td></tr>
+                    <tr><td>4</td><td>×1.3</td></tr>
+                    <tr><td>5</td><td>×1.45</td></tr>
+                    <tr><td>6</td><td>×1.68</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="cap">Concentrate evolves on one Axie to hit higher multipliers (5 parts → ×1.45) rather than spreading them thin.</p>
+    </section>
 
-        <section class="chart-section">
-            <h2>Evolved Parts Multiplier</h2>
-            <div class="chart-wrapper"><canvas id="evolvedChart"></canvas></div>
-            <p class="caption">Multiplier applied to an Axie’s flame based on number of evolved parts equipped</p>
-        </section>
+    <!-- ===== FORTUNE SLIPS ===== -->
+    <section class="matrix-section">
+        <h2>Fortune Slips Cost by Land Type</h2>
+        <div class="table-wrap">
+            <table class="matrix-table">
+                <thead>
+                    <tr><th>Land Type</th><th>Slips Needed (24 h buff)</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Savannah</td><td>3</td></tr>
+                    <tr><td>Forest</td><td>8</td></tr>
+                    <tr><td>Arctic</td><td>22</td></tr>
+                    <tr><td>Mystic</td><td>48</td></tr>
+                    <tr class="highlight-row"><td>Genesis</td><td>960</td></tr>
+                    <tr class="highlight-row"><td>Luna’s Landing</td><td>2 880</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="cap">Each Fortune Slip provides a 24 h, 10 % Atia’s Flame buff on a plot. Buff does not stack in strength; buying more extends duration.</p>
+    </section>
 
-        <section class="chart-section">
-            <h2>Land Item Rarity Boost</h2>
-            <div class="chart-wrapper"><canvas id="landItemChart"></canvas></div>
-            <p class="caption">Percentage boost to Atia’s Flame (and AXP) per land item by rarity</p>
-        </section>
+    <!-- ===== LAND ITEMS ===== -->
+    <section class="matrix-section">
+        <h2>Land Items — Rarity Boost</h2>
+        <div class="table-wrap">
+            <table class="matrix-table">
+                <thead>
+                    <tr><th>Rarity</th><th>Atia’s Flame Boost</th><th>AXP Boost</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Common</td><td>0.05 %</td><td>1 %</td></tr>
+                    <tr><td>Rare</td><td>0.10 %</td><td>1 %</td></tr>
+                    <tr><td>Epic</td><td>0.75 %</td><td>1 %</td></tr>
+                    <tr><td>Mystic</td><td>1.5 %</td><td>4 %</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="cap">Up to <strong>8 land items</strong> per plot. Matching item‑to‑plot environment adds a multiplier; mismatched items still count at base boost.</p>
+    </section>
 
-        <section class="chart-section">
-            <h2>Fortune Slips Cost by Land Type</h2>
-            <div class="chart-wrapper"><canvas id="fortuneChart"></canvas></div>
-            <p class="caption">Number of Fortune Slips needed to activate a 24‑hour, 10 % Atia’s Flame buff</p>
-        </section>
+    <!-- ===== ACCESSORIES ===== -->
+    <section class="matrix-section">
+        <h2>Accessories — Flame Boost Matrix</h2>
+        <p class="subtitle">Flame boost scales with <strong>Axie Rarity</strong> × <strong>Accessory Rarity</strong>. Max 5 accessories per Axie.</p>
+        <div class="table-wrap">
+            <table class="matrix-table">
+                <thead>
+                    <tr><th>Axie \ Accessory</th><th>Common</th><th>Rare</th><th>Epic</th><th>Mystic</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Normal</td><td>0.1</td><td>0.3</td><td>1.0</td><td>3.0</td></tr>
+                    <tr><td>Rare</td><td>0.2</td><td>0.5</td><td>1.5</td><td>4.0</td></tr>
+                    <tr><td>Epic</td><td>0.5</td><td>1.0</td><td>2.5</td><td>5.5</td></tr>
+                    <tr><td>Mystic</td><td>1.0</td><td>2.0</td><td>4.5</td><td class="cell-gold">9.0</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="cap">Example values. Mystic + Mystic = 9 Flame (highlighted). While mining the boost is applied to Atia’s Flame; while resting it boosts AXP.</p>
+    </section>
 
-        <section class="chart-section">
-            <h2>Land Utility Breakdown</h2>
-            <div class="chart-wrapper"><canvas id="landUtilChart"></canvas></div>
-            <p class="caption">Total land plots, activated &amp; locked plots, and available item slots per plot</p>
-        </section>
+    <!-- ===== LAND UTILITY ===== -->
+    <section class="matrix-section">
+        <h2>Land Utility Breakdown</h2>
+        <div class="table-wrap">
+            <table class="matrix-table">
+                <thead>
+                    <tr><th>Metric</th><th>Value</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Total land plots</td><td>16 886</td></tr>
+                    <tr><td>Activated &amp; locked</td><td>52.78 % (≈ 8 911 plots)</td></tr>
+                    <tr><td>Inactive (unlocked)</td><td>47.22 % (≈ 7 975 plots)</td></tr>
+                    <tr><td>Max land items per plot</td><td>8</td></tr>
+                    <tr><td>Max working Axies per plot</td><td>30</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="cap">52.78 % of 16 886 plots were activated &amp; locked during V1’s first week. Each plot holds up to 30 working Axies for mining.</p>
+    </section>
 
-        <section class="chart-section">
-            <h2>Accessories Flame Boost</h2>
-            <p class="section-desc">Flame boost scales with <strong>Axie rarity</strong> × <strong>accessory rarity</strong>. Max 5 accessories per Axie.</p>
-            <div class="table-wrapper">
-                <table class="accessories-table">
-                    <thead>
-                        <tr>
-                            <th>Axie \ Accessory</th>
-                            <th>Common</th>
-                            <th>Rare</th>
-                            <th>Epic</th>
-                            <th>Mystic</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>Normal</td><td>0.1</td><td>0.3</td><td>1</td><td>3</td></tr>
-                        <tr><td>Rare</td><td>0.2</td><td>0.5</td><td>1.5</td><td>4</td></tr>
-                        <tr><td>Epic</td><td>0.5</td><td>1</td><td>2.5</td><td>5.5</td></tr>
-                        <tr><td>Mystic</td><td>1</td><td>2</td><td>4.5</td><td class="highlight">9</td></tr>
-                    </tbody>
-                </table>
-            </div>
-            <p class="caption">Example flame boost values. Exact formula: AxieRarity × AccessoryRarity (normalized). Mystic + Mystic = 9 Flame (as shown in article).</p>
-        </section>
+    <!-- ===== FLAME FORMULA ===== -->
+    <section class="matrix-section">
+        <h2>New Flame Power Formula</h2>
+        <div class="formula-box">
+            <p><strong>Individual Axies' Flame</strong> = Base Atia’s Flame + Evolved Part Boost + Accessory Boost</p>
+            <p><strong>Your Plot's Flame</strong> = ⌊ Total of ALL Individual Working Axies’ Flame</p>
+            <p class="indent">  × ( 1 + Land Item % Boost )</p>
+            <p class="indent">  × ( 1 + Fortune Slips Buff ) ⌋</p>
+            <p><strong>bAXS per tick</strong> = ( Your Plot's Flame ÷ Total Flame of all mining plots in your category ) × Total bAXS pool for that category</p>
+        </div>
+        <p class="cap">All three components stack multiplicatively on the plot level.</p>
+    </section>
 
-        <section class="chart-section">
-            <h2>New Flame Power Formula</h2>
-            <div class="formula-box">
-                <p><strong>Individual Axies' Flame</strong> = Base Atia’s Flame + Evolved Part Boost + Accessory Boost</p>
-                <p><strong>Your Plot's Flame</strong> = ⌊ Total of ALL Individual Working Axies’ Flame</p>
-                <p class="indent">  × ( 1 + % Land Item Boost )</p>
-                <p class="indent">  × ( 1 + Fortune Slips Buff ) ⌋</p>
-                <p><strong>bAXS per tick</strong> = ( Your Plot's Flame ÷ Total Flame of all mining plots in your category ) × Total bAXS pool for that category</p>
-            </div>
-            <p class="caption">Core formulas from the article. All three components stack multiplicatively on the plot level.</p>
-        </section>
-
-    </div>
     <footer class="footer">
-        <p>Built with data from the <a href="https://blog.axieinfinity.com/p/terrariums-update-sneak-peek" target="_blank">Terrariums update sneak peek</a>. Not affiliated with Sky Mavis or Axie Infinity.</p>
-        <p><a href="https://axieinfinity.com" target="_blank">Axie Infinity</a> · <a href="https://app.axieinfinity.com/profile/inventory/axies/" target="_blank">Axie Inventory</a></p>
+        <p>Data from <a href="https://blog.axieinfinity.com/p/terrariums-update-sneak-peek" target="_blank">Terrariums update sneak peek</a> · Not affiliated with Sky Mavis or Axie Infinity</p>
+        <p>
+            <a href="https://axieinfinity.com" target="_blank">Axie Infinity</a> ·
+            <a href="https://app.axieinfinity.com/profile/inventory/axies/" target="_blank">Axie Inventory</a> ·
+            <a href="https://app.axieinfinity.com/profile/lands" target="_blank">My Land</a>
+        </p>
     </footer>
-    <script src="script.js"></script>
+</div>
 </body>
 </html>

@@ -13,53 +13,61 @@ body {
     margin:0 auto;
     flex:1;
 }
-h1 { text-align:center; margin-bottom:0.5rem; color:#2c3e50; }
+h1 { text-align:center; margin-bottom:0.5rem; color:#2c3e50; font-size:1.6rem; }
 .site-intro { text-align:center; margin-bottom:2rem; color:#555; font-size:0.9rem; }
 .site-intro a { color:#3498db; }
-.chart-section {
+
+.matrix-section {
     background:#fff;
     border-radius:8px;
-    box-shadow:0 2px 10px rgba(0,0,0,0.1);
-    padding:1.5rem;
-    margin-bottom:2rem;
+    box-shadow:0 2px 10px rgba(0,0,0,0.08);
+    padding:1.25rem;
+    margin-bottom:1.5rem;
 }
-.chart-section h2 { margin:0 0 1rem; color:#2c3e50; font-size:1.5rem; }
-.chart-wrapper { width:100%; height:300px; }
-.caption { font-size:0.9rem; color:#666; text-align:center; margin-top:0.5rem; }
-.section-desc { color:#555; margin-bottom:0.75rem; }
-
-/* Accessories table */
-.table-wrapper { overflow-x:auto; margin:1rem 0; }
-.accessories-table {
+.matrix-section h2 {
+    margin:0 0 0.5rem;
+    color:#2c3e50;
+    font-size:1.25rem;
+}
+.subtitle { color:#555; margin-bottom:0.75rem; font-size:0.95rem; }
+.table-wrap { overflow-x:auto; margin:0.75rem 0; }
+.matrix-table {
     width:100%;
     border-collapse:collapse;
     font-size:0.95rem;
 }
-.accessories-table th,
-.accessories-table td {
+.matrix-table th,
+.matrix-table td {
     border:1px solid #ddd;
-    padding:10px 14px;
+    padding:8px 12px;
     text-align:center;
 }
-.accessories-table th {
+.matrix-table th {
     background:#f0f0f0;
     font-weight:600;
     color:#2c3e50;
 }
-.accessories-table td.highlight { background:#ffd700; font-weight:bold; color:#2c3e50; }
-.accessories-table td:first-child { font-weight:600; background:#fafafa; }
+.matrix-table td:first-child { font-weight:600; background:#fafafa; }
+.highlight-row td { background:#fff3cd; }
+.cell-gold { background:#ffd700; font-weight:bold; color:#2c3e50; }
+.cap {
+    font-size:0.85rem;
+    color:#666;
+    text-align:center;
+    margin-top:0.5rem;
+}
 
 /* Formula box */
 .formula-box {
     background:#f8f9fa;
     border-left:4px solid #3498db;
-    padding:1rem 1.5rem;
+    padding:0.75rem 1.25rem;
     border-radius:4px;
-    margin:1rem 0;
+    margin:0.75rem 0;
     font-size:0.95rem;
     line-height:1.8;
 }
-.formula-box p { margin-bottom:0.5rem; }
+.formula-box p { margin-bottom:0.4rem; }
 .formula-box .indent { margin-left:2rem; }
 .formula-box strong { color:#2c3e50; }
 
@@ -75,13 +83,12 @@ h1 { text-align:center; margin-bottom:0.5rem; color:#2c3e50; }
 .footer a { color:#3498db; text-decoration:none; }
 .footer a:hover { text-decoration:underline; }
 
-/* Mobile tweaks */
+/* Mobile */
 @media (max-width:600px) {
-    .container { padding:0.5rem; }
-    .chart-section { padding:1rem; }
-    .chart-wrapper { height:250px; }
-    .accessories-table { font-size:0.85rem; }
-    .accessories-table th,
-    .accessories-table td { padding:6px 8px; }
-    .formula-box { font-size:0.9rem; padding:0.75rem 1rem; }
+    .container { padding:0.25rem; }
+    .matrix-section { padding:0.75rem; }
+    .matrix-table { font-size:0.85rem; }
+    .matrix-table th,
+    .matrix-table td { padding:5px 7px; }
+    .formula-box { font-size:0.9rem; padding:0.5rem 0.75rem; }
 }
