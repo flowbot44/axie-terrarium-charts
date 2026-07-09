@@ -104,21 +104,23 @@
     <!-- ===== LAND ENVIRONMENT MATCHING MULTIPLIER ===== -->
     <section class="matrix-section">
         <h2>Land Environment Matching Multiplier</h2>
-        <p class="subtitle">When a land item's type matches the plot's biome, the item's boost gets a multiplier. Mismatched items still count at base boost.</p>
+        <p class="subtitle">When a land item's type matches the plot's biome, the item's boost gets a multiplier. Non-matching items receive their base boost without any penalty.</p>
         <div class="table-wrap">
             <table class="matrix-table">
                 <thead>
-                    <tr><th>Item Type \ Environment</th><th>Savannah</th><th>Forest</th><th>Arctic</th><th>Mystic</th></tr>
+                    <tr><th>Plot Environment</th><th>Environment Multiplier</th><th>Trigger Conditions</th></tr>
                 </thead>
                 <tbody>
-                    <tr><td>Desert / Dry</td><td>×2.0</td><td>×0.5</td><td>×0.3</td><td>×1.0</td></tr>
-                    <tr><td>Jungle / Wet</td><td>×0.5</td><td>×2.0</td><td>×0.4</td><td>×1.2</td></tr>
-                    <tr><td>Ice / Snow</td><td>×0.3</td><td>×0.4</td><td>×2.0</td><td>×1.5</td></tr>
-                    <tr><td>Ethereal / Magic</td><td>×1.0</td><td>×1.2</td><td>×1.5</td><td>×3.0</td></tr>
+                    <tr><td>Savannah</td><td>1.2</td><td>Only Savannah items</td></tr>
+                    <tr><td>Forest</td><td>1.2</td><td>Only Forest items</td></tr>
+                    <tr><td>Arctic</td><td>1.2</td><td>Only Arctic items</td></tr>
+                    <tr><td>Mystic</td><td>1.5</td><td>Only Mystic items</td></tr>
+                    <tr class="highlight-row"><td>Genesis</td><td>1.2</td><td>Items of all environments</td></tr>
+                    <tr class="highlight-row"><td>Luna's Landing</td><td>1.5</td><td>Items of all environments</td></tr>
                 </tbody>
             </table>
         </div>
-        <p class="cap">Example values based on the V1.1 article's graphic. Exact multipliers may vary; refer to the original post. Genesis &amp; Luna's Landing have their own matching rules (not shown).</p>
+        <p class="cap">Formula: % Land Item Boost = (Total % Boost of Matching Items × Environment Multiplier) + Total % Boost of Remaining Items</p>
     </section>
 
     <!-- ===== ACCESSORIES ===== -->
